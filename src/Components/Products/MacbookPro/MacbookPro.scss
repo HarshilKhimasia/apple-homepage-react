@@ -1,0 +1,40 @@
+.macbookpro {
+  background-image: url("../../../../public/assets/macbook-pro.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  .content {
+    display: inline-grid;
+    grid-template-columns: 1fr;
+    width: 308px;
+    justify-items: center;
+    text-align: center;
+    .head {
+      font-size: 40px;
+      line-height: 1.1;
+      font-weight: 600;
+      letter-spacing: 0em;
+      font-family: "SF Pro Text-normal";
+      margin-top: 53px;
+    }
+    .sub-head {
+      font-size: 21px;
+      line-height: 1.2381;
+      font-weight: 400;
+      letter-spacing: -0.04em;
+      font-family: "SF Pro Text-normal";
+      margin-top: 4px;
+    }
+    .link {
+      a {
+        text-decoration: none;
+        display: inline-flex;
+        color: #06c;
+        font-size: 17px;
+        line-height: 1.23536;
+        font-weight: 400;
+        font-family: "SF Pro Text-normal";
+      }
+    }
+  }
+}
