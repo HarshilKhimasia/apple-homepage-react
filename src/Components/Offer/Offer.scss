@@ -1,0 +1,29 @@
+@import "../../fonts/sf-pro-text/stylesheet.css";
+
+.offer {
+  background-color: #1d1d1f;
+  text-align: center;
+  span {
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 0;
+    color: #fff;
+    font-family: "SF Pro Text-normal";
+    line-height: 1.47059;
+    font-weight: 400;
+    letter-spacing: -0.022em;
+    sup {
+      font-size: 13px;
+      a {
+        text-decoration: none;
+        color: #fff;
+      }
+    }
+    a {
+      text-decoration: none;
+      color: #06c;
+      display: inline-flex;
+    }
+  }
+}
