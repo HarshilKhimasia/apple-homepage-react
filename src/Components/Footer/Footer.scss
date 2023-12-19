@@ -75,6 +75,9 @@ footer {
       .policy {
         display: flex;
         list-style-type: none;
+        @include for-mob() {
+          flex-wrap: wrap;
+        }
         li {
           position: relative;
           margin-inline-end: 6px;
@@ -88,6 +91,9 @@ footer {
           }
           a {
             font-size: 12px;
+            @include for-mob() {
+              font-size: 10px;
+            }
             color: rgba(0, 0, 0, 0.72);
             font-family: "SF Pro Text-normal";
             text-decoration: none;
@@ -99,6 +105,9 @@ footer {
         list-style-type: none;
         li {
           font-size: 12px;
+          @include for-mob() {
+            font-size: 10px;
+          }
           color: rgba(0, 0, 0, 0.72);
           font-family: "SF Pro Text-normal";
         }

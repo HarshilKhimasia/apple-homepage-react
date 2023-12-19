@@ -141,7 +141,7 @@ nav.hovered {
   background-color: #1d1d1f;
   position: fixed;
   width: 100%;
-  z-index: 998;
+  z-index: 999;
 }
 .behind-overlay {
   width: 100%;
@@ -149,7 +149,7 @@ nav.hovered {
   transition: opacity 0.5s ease-in-out;
   overflow: hidden;
   position: fixed;
-  z-index: 998;
+  z-index: 995;
   opacity: 0;
   bottom: 0;
   left: 0;
