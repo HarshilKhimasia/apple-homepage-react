@@ -11,6 +11,7 @@ import IpadProd from "./Components/Products/IpadProd/IpadPro";
 import AirPodsPro from "./Components/Products/AirPodsPro/AirPodsPro";
 import TradeIn from "./Components/Products/TradeIn/TradeIn";
 import AutoSlide from "./Components/AutoSlide/AutoSlide";
+import Footer from "./Components/Footer/Footer";
 
 function App() {
   return (
@@ -30,7 +31,10 @@ function App() {
           <TradeIn />
         </div>
       </section>
-      <AutoSlide />
+      <section>
+        <AutoSlide />
+      </section>
+      <Footer />
     </>
   );
 }
