@@ -1,9 +1,13 @@
 @import "../../fonts/sf-pro-text/stylesheet.css";
+@import "../../App.scss";
 .watch {
   background-image: url("../../../public/assets/watch.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   height: 692px;
+  @include for-mob() {
+    height: 500px !important;
+  }
   background-position: bottom;
   display: flex;
   justify-content: center;

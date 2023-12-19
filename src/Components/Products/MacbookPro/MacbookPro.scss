@@ -1,5 +1,9 @@
+@import "../../../App.scss";
 .macbookpro {
   background-image: url("../../../../public/assets/macbook-pro.jpg");
+  @include for-mob() {
+    background-image: url("../../../../public/assets/macbook-pro-mob.jpg");
+  }
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;
