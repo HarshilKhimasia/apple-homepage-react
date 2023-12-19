@@ -1,9 +1,13 @@
 @import "../../fonts/sf-pro-text/stylesheet.css";
+@import "../../App.scss";
 .iphone-15 {
   background-image: url("../../../public/assets/bg-2.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   height: 692px;
+  @include for-mob() {
+    height: 500px !important;
+  }
   background-position: bottom;
   .content {
     text-align: center;

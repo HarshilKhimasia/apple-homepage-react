@@ -1,24 +1,191 @@
+@import "../../App.scss";
 .wrapper {
   padding-bottom: 24px;
+}
+
+.splide__arrow {
+  height: 100% !important;
+  width: 300px !important;
+  &:focus-visible {
+    outline: transparent !important;
+  }
+  @include for-mob() {
+    width: 70px !important;
+  }
+  background: transparent !important;
 }
 
 .splide__progress__bar {
   background-color: transparent !important;
 }
+.splide__arrow svg {
+  fill: none !important;
+}
 
 .cistome-slide {
   margin: 0 5px; /* Adjust the margin as needed */
   box-sizing: border-box;
+  position: relative;
+  cursor: pointer;
+  z-index: 1;
+  .lg-slide {
+    @include for-mob {
+      display: none;
+    }
+  }
+  .sm-slide {
+    display: none;
+    @include for-mob {
+      display: block;
+    }
+  }
+  .outer {
+    position: absolute;
+    bottom: 50px;
+    display: none;
+    left: 50%;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    @include for-mob() {
+      display: block;
+      width: 100%;
+    }
+    cursor: pointer;
+    z-index: 700;
+
+    .info-bottom {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      .custom-button {
+        background-color: #fff;
+        margin-top: 15px;
+        color: #1d1d1f;
+        opacity: 0.9;
+        text-decoration: none;
+        border-style: solid;
+        border-width: 1px;
+        min-width: 28px;
+        padding-left: 21px;
+        padding-right: 21px;
+        padding-top: 11px;
+        padding-bottom: 11px;
+        --sk-button-margin-horizontal: 18px;
+        --sk-button-margin-vertical: 18px;
+        font-size: 14px;
+        line-height: 1.42859;
+        border-radius: 980px;
+        font-weight: 400;
+        letter-spacing: -0.016em;
+        border-color: transparent;
+
+        font-weight: 700;
+        figure {
+          display: inline-block;
+          img {
+            margin-top: 2px;
+            width: 18px;
+            height: 18px;
+            margin-left: 9px;
+          }
+        }
+      }
+      .typography-shows-genre {
+        .genre {
+          font-weight: 600;
+          line-height: 30px;
+        }
+        font-size: 16px;
+        line-height: 1.1;
+        font-weight: 400;
+        letter-spacing: 0em;
+        text-align: center;
+        margin-left: 0px;
+        font-family: "SF Pro Text-normal";
+        font-weight: 400;
+        color: #fff;
+        text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.6);
+      }
+    }
+  }
+  .inner {
+    position: absolute;
+    display: block;
+    @include for-mob() {
+      display: none;
+    }
+    bottom: 50px;
+    cursor: pointer;
+    z-index: 700;
+    left: 50px;
+    .info-bottom {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+
+      .custom-button {
+        background-color: #fff;
+        color: #1d1d1f;
+        opacity: 0.9;
+        text-decoration: none;
+        border-style: solid;
+        border-width: 1px;
+        min-width: 28px;
+        padding-left: 21px;
+        padding-right: 21px;
+        padding-top: 11px;
+        padding-bottom: 11px;
+        --sk-button-margin-horizontal: 18px;
+        --sk-button-margin-vertical: 18px;
+        font-size: 14px;
+        line-height: 1.42859;
+        border-radius: 980px;
+        font-weight: 400;
+        letter-spacing: -0.016em;
+        border-color: transparent;
+
+        font-weight: 700;
+        figure {
+          display: inline-block;
+          img {
+            width: 20px;
+            height: 20px;
+            margin-left: 12px;
+            margin-top: 2px;
+          }
+        }
+      }
+      .typography-shows-genre {
+        font-size: 20px;
+        line-height: 1.1;
+        font-weight: 400;
+        letter-spacing: 0em;
+
+        margin-left: 40px;
+        font-weight: 400;
+        color: #fff;
+        text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.6);
+      }
+    }
+  }
 }
+
 .splide__slide img {
   vertical-align: bottom;
   width: 100%;
   height: auto;
+  @include for-mob {
+    height: 69vh;
+    object-fit: cover;
+  }
 }
 
 .splide__track {
   position: relative;
-
+  z-index: -2;
   &::after {
     content: "";
     position: absolute;
@@ -27,15 +194,42 @@
 
     top: 0;
     bottom: 0;
-    width: 100%; /* Adjust the width of the overlay as needed */
+    width: 300px; /* Adjust the width of the overlay as needed */
+    @include for-mob() {
+      width: 73px;
+    }
     background: rgb(255, 255, 255);
     background: linear-gradient(
       90deg,
       rgb(255 255 255 / 51%) 0%,
-      rgb(255 255 255 / 25%) 15%,
-      rgba(255, 255, 255, 0) 30%,
-      rgba(255, 255, 255, 0) 70%,
-      rgb(255 255 255 / 25%) 85%,
+      rgba(255, 255, 255, 0.486) 15%,
+      rgba(255, 255, 255, 0.466) 30%,
+      rgba(255, 255, 255, 0.486) 70%,
+      rgba(255, 255, 255, 0.473) 85%,
+      rgb(255 255 255 / 51%) 100%
+    );
+    z-index: 1; /* Ensure the overlay is above the image */
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    transition: opacity 5s ease;
+    left: 0;
+
+    top: 0;
+    bottom: 0;
+    width: 300px; /* Adjust the width of the overlay as needed */
+    @include for-mob() {
+      width: 73px;
+    }
+    background: rgb(255, 255, 255);
+    background: linear-gradient(
+      90deg,
+      rgb(255 255 255 / 51%) 0%,
+      rgba(255, 255, 255, 0.486) 15%,
+      rgba(255, 255, 255, 0.466) 30%,
+      rgba(255, 255, 255, 0.486) 70%,
+      rgba(255, 255, 255, 0.473) 85%,
       rgb(255 255 255 / 51%) 100%
     );
     z-index: 1; /* Ensure the overlay is above the image */

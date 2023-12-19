@@ -2,7 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import "./Navbar.scss";
 function Navbar() {
   const [isHovered, setIsHovered] = useState(false);
-  const [isLinkHovered, setIsLinkHovered] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
   const navRef = useRef(null);
   const collapsedCurtainRef = useRef(null);
   const menuGridRef = useRef(null);
@@ -22,10 +23,16 @@ function Navbar() {
     }
     return 0;
   };
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+  const closeMenu = () => {
+    setMenuOpen(true);
+  };
   return (
     <>
       <nav ref={navRef} className={isHovered ? "hovered" : ""}>
-        <ul>
+        <ul className="desk-ul">
           <li>
             <a href="https://www.apple.com/in/">
               <img
@@ -92,6 +99,70 @@ function Navbar() {
             </a>
           </li>
         </ul>
+        <div className="mob-ul">
+          <div
+            className={`cross-block ${menuOpen ? "" : "hide"}`}
+            onClick={toggleMenu}
+          >
+            <img
+              src="/assets/cross-svgrepo-com.svg"
+              height={"auto"}
+              width={"17px"}
+              alt="search-icon"
+            />
+          </div>
+          <ul>
+            <li>
+              <img
+                src="/assets/logo-one.svg"
+                height={"auto"}
+                width={"16px"}
+                alt="logo"
+              />
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <img
+                src="/assets/search-icon.svg"
+                height={"auto"}
+                width={"17px"}
+                alt="search-icon"
+              />
+            </li>
+            <li>
+              <img
+                src="/assets/bag-icon.svg"
+                height={"auto"}
+                width={"17px"}
+                alt="search-icon"
+              />
+            </li>
+            <li
+              className={`hamburger ${menuOpen ? "hide" : ""}`}
+              onClick={toggleMenu}
+            >
+              <img
+                src="/assets/menu-duo-md-svgrepo-com.svg"
+                height={"auto"}
+                width={"19px"}
+                alt="menu-duo-md-svgrepo-com"
+              />
+            </li>
+          </ul>
+          <ul className={`full-menu ${menuOpen ? "show" : ""}`}>
+            <li onClick={closeMenu}>Store</li>
+            <li onClick={closeMenu}>Mac</li>
+            <li onClick={closeMenu}>iPad</li>
+            <li onClick={closeMenu}>iPhone</li>
+            <li onClick={closeMenu}>Watch</li>
+            <li onClick={closeMenu}>AirPods</li>
+            <li onClick={closeMenu}>TV & Home</li>
+            <li onClick={closeMenu}>Entertainment</li>
+            <li onClick={closeMenu}>Accessories</li>
+            <li onClick={closeMenu}>Support</li>
+          </ul>
+        </div>
       </nav>
       <div
         ref={collapsedCurtainRef}

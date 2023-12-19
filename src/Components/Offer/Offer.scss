@@ -1,5 +1,5 @@
 @import "../../fonts/sf-pro-text/stylesheet.css";
-
+@import "../../App.scss";
 .offer {
   background-color: #1d1d1f;
   text-align: center;
@@ -13,6 +13,21 @@
     line-height: 1.47059;
     font-weight: 400;
     letter-spacing: -0.022em;
+    @include for-1024-768() {
+      flex-wrap: wrap;
+      font-size: 12px;
+      justify-content: center;
+    }
+    @include for-tab() {
+      flex-wrap: wrap;
+      font-size: 12px;
+      justify-content: center;
+    }
+    @include for-mob() {
+      justify-content: center;
+      flex-wrap: wrap;
+      font-size: 12px;
+    }
     sup {
       font-size: 13px;
       a {

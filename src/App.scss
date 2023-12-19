@@ -6,7 +6,28 @@
   box-sizing: border-box;
 }
 body {
-  background-color: #000;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(255, 255, 255, 1) 35%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+@mixin for-1024-768 {
+  @media screen and (min-width: 920px) and (max-width: 1024px) {
+    @content;
+  }
+}
+@mixin for-tab {
+  @media screen and (min-width: 545px) and (max-width: 920px) {
+    @content;
+  }
+}
+@mixin for-mob {
+  @media screen and (max-width: 544px) {
+    @content;
+  }
 }
 .products {
   background-color: #fff;
@@ -21,6 +42,12 @@ footer {
 .productsContainer {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  @include for-mob() {
+    grid-template-columns: 1fr;
+  }
+  @include for-tab() {
+    grid-template-columns: 1fr;
+  }
   grid-gap: 12px;
   padding: 12px;
   .col {
@@ -39,9 +66,26 @@ footer {
     text-decoration: unset !important;
   }
 }
+section {
+  .content {
+    .head {
+      @include for-mob() {
+        font-size: 32px !important;
+      }
+    }
+    .sub-head {
+      @include for-mob() {
+        font-size: 19px !important;
+      }
+    }
+  }
+}
 .content {
   .links {
     a {
+      @include for-mob() {
+        font-size: 17px !important;
+      }
       &:hover {
         text-decoration: underline !important;
       }
