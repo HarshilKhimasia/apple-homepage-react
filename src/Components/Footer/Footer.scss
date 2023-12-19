@@ -1,0 +1,103 @@
+footer {
+  .footer-container {
+    max-width: 980px;
+    margin: 0 auto;
+    .para-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      p {
+        font-size: 12px;
+        line-height: 1.3333733333;
+        font-weight: 400;
+        letter-spacing: -0.01em;
+        font-family: "SF Pro Text-normal";
+        padding-bottom: 0.8em;
+        color: #0000008f;
+      }
+    }
+
+    .links-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
+      .foot-col {
+        .apple-links {
+          padding-top: 24px;
+        }
+        h6 {
+          font-size: 12px;
+          line-height: 1.3333733333;
+          font-weight: 400;
+          letter-spacing: -0.01em;
+          font-family: "SF Pro Text-normal";
+          font-weight: 600;
+          margin-bottom: 0.8em;
+          margin-inline-end: 20px;
+          outline: none;
+          color: rgba(0, 0, 0, 0.88);
+        }
+        ul {
+          list-style-type: none;
+          li {
+            display: block;
+            pointer-events: auto;
+            margin-bottom: 0.1em;
+            a {
+              font-size: 12px;
+              text-decoration: none;
+              color: #0000008f;
+              font-family: "SF Pro Text-normal";
+            }
+          }
+        }
+      }
+    }
+    .bottom-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 2fr 0.5fr;
+
+      .policy {
+        display: flex;
+        list-style-type: none;
+        li {
+          position: relative;
+          margin-inline-end: 6px;
+          &::after {
+            content: "";
+            position: absolute;
+            height: 10px;
+            width: 1px;
+            background-color: rgba(0, 0, 0, 0.72);
+            margin: 2px -2px;
+          }
+          a {
+            font-size: 12px;
+            color: rgba(0, 0, 0, 0.72);
+            font-family: "SF Pro Text-normal";
+            text-decoration: none;
+            padding-right: 10px;
+          }
+        }
+      }
+      ul {
+        list-style-type: none;
+        li {
+          font-size: 12px;
+          color: rgba(0, 0, 0, 0.72);
+          font-family: "SF Pro Text-normal";
+        }
+      }
+      .india {
+        float: inline-end;
+      }
+    }
+    .more-ways {
+      font-size: 12px;
+      color: rgba(0, 0, 0, 0.72);
+      font-family: "SF Pro Text-normal";
+      margin-bottom: 16px;
+      padding-bottom: 19px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.72);
+    }
+  }
+}
